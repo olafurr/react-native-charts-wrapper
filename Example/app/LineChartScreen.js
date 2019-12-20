@@ -49,8 +49,8 @@ class LineChartScreen extends React.Component {
                       bundle: this.convertImageToImageBundleForNativeModule(
                         require("./test.png")
                       ),
-                      width: 40,
-                      height: 40
+                      width: 10,
+                      height: 10
                     }
                   },
                   {
@@ -60,8 +60,8 @@ class LineChartScreen extends React.Component {
                       bundle: this.convertImageToImageBundleForNativeModule(
                         require("./test.png")
                       ),
-                      width: 40,
-                      height: 40
+                      width: 20,
+                      height: 20
                     }
                   },
                   {
@@ -71,8 +71,8 @@ class LineChartScreen extends React.Component {
                       bundle: this.convertImageToImageBundleForNativeModule(
                         require("./test.png")
                       ),
-                      width: 40,
-                      height: 40
+                      width: 30,
+                      height: 30
                     }
                   },
                   {
