@@ -102,7 +102,7 @@ public class LineDataExtract extends DataExtract<LineData, Entry> {
                 ReadableMap bundle = icon.getMap("bundle");
                 int width = icon.getInt("width");
                 int height = icon.getInt("height");
-                entry = new Entry(x, (float) map.getDouble("y"), DrawableUtils.drawableFromUrl(bundle.getString("uri"), width, height));
+                entry = new Entry(x, (float) map.getDouble("y"), DrawableUtils.drawableFromUrl(bundle.getString("uri"), width, height), ConversionUtil.toMap(map));
 
             } else {
                 entry = new Entry(x, (float) map.getDouble("y"), ConversionUtil.toMap(map));

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createRef } from "react";
 import {
   AppRegistry,
   StyleSheet,
@@ -51,7 +51,8 @@ class LineChartScreen extends React.Component {
                       ),
                       width: 10,
                       height: 10
-                    }
+                    },
+                    marker: "부엉이1"
                   },
                   {
                     x: 5,
@@ -62,7 +63,8 @@ class LineChartScreen extends React.Component {
                       ),
                       width: 20,
                       height: 20
-                    }
+                    },
+                    marker: "부엉이2"
                   },
                   {
                     x: 6,
@@ -73,7 +75,8 @@ class LineChartScreen extends React.Component {
                       ),
                       width: 30,
                       height: 30
-                    }
+                    },
+                    marker: "부엉이3"
                   },
                   {
                     x: 7,
@@ -84,7 +87,8 @@ class LineChartScreen extends React.Component {
                       ),
                       width: 40,
                       height: 40
-                    }
+                    },
+                    marker: "부엉이4"
                   }
                 ],
                 label: "A"
@@ -102,49 +106,51 @@ class LineChartScreen extends React.Component {
   }
 
   onPressLearnMore() {
-    this.refs.chart.setDataAndLockIndex({
-      dataSets: [
-        {
-          values: [
-            { x: 1, y: 0.88 },
-            { x: 2, y: 0.77 },
-            { x: 3, y: 105 },
-            { x: 4, y: 135 },
-            { x: 5, y: 0.88 },
-            { x: 6, y: 0.77 },
-            { x: 7, y: 105 },
-            { x: 8, y: 135 }
-          ],
-          label: "A"
-        },
-        {
-          values: [
-            { x: 1, y: 90 },
-            { x: 2, y: 130 },
-            { x: 3, y: 100 },
-            { x: 4, y: 105 },
-            { x: 5, y: 90 },
-            { x: 6, y: 130 },
-            { x: 7, y: 100 },
-            { x: 8, y: 105 }
-          ],
-          label: "B"
-        },
-        {
-          values: [
-            { x: 1, y: 110 },
-            { x: 2, y: 105 },
-            { x: 3, y: 115 },
-            { x: 4, y: 110 },
-            { x: 5, y: 110 },
-            { x: 6, y: 105 },
-            { x: 7, y: 115 },
-            { x: 8, y: 110 }
-          ],
-          label: "C"
-        }
-      ]
-    });
+    console.warn("붕");
+    this.refs.chart.highlights([{ x: 7 }]);
+    // this.refs.chart.setDataAndLockIndex({
+    //   dataSets: [
+    //     {
+    //       values: [
+    //         { x: 1, y: 0.88 },
+    //         { x: 2, y: 0.77 },
+    //         { x: 3, y: 105 },
+    //         { x: 4, y: 135 },
+    //         { x: 5, y: 0.88 },
+    //         { x: 6, y: 0.77 },
+    //         { x: 7, y: 105 },
+    //         { x: 8, y: 135 }
+    //       ],
+    //       label: "A"
+    //     },
+    //     {
+    //       values: [
+    //         { x: 1, y: 90 },
+    //         { x: 2, y: 130 },
+    //         { x: 3, y: 100 },
+    //         { x: 4, y: 105 },
+    //         { x: 5, y: 90 },
+    //         { x: 6, y: 130 },
+    //         { x: 7, y: 100 },
+    //         { x: 8, y: 105 }
+    //       ],
+    //       label: "B"
+    //     },
+    //     {
+    //       values: [
+    //         { x: 1, y: 110 },
+    //         { x: 2, y: 105 },
+    //         { x: 3, y: 115 },
+    //         { x: 4, y: 110 },
+    //         { x: 5, y: 110 },
+    //         { x: 6, y: 105 },
+    //         { x: 7, y: 115 },
+    //         { x: 8, y: 110 }
+    //       ],
+    //       label: "C"
+    //     }
+    //   ]
+    // });
   }
 
   handleSelect(event) {
@@ -173,6 +179,7 @@ class LineChartScreen extends React.Component {
 
         <View style={styles.container}>
           <LineChart
+            ref={this.chart}
             style={styles.chart}
             data={this.state.data}
             chartDescription={{ text: "" }}
