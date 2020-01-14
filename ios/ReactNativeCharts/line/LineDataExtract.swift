@@ -117,9 +117,9 @@ class LineDataExtract : DataExtract {
                     
                     if let image = uiImage {
                         let realIconImage = resizeImage(image: image, width: width, height: height);
-                        entry = ChartDataEntry(x: x, y: dict["y"].doubleValue, icon: realIconImage);
+                        entry = ChartDataEntry(x: x, y: dict["y"].doubleValue, icon: realIconImage, data: dict as AnyObject?);
                     } else {
-                        entry = ChartDataEntry(x: x, y: dict["y"].doubleValue, icon: uiImage);
+                        entry = ChartDataEntry(x: x, y: dict["y"].doubleValue, icon: uiImage, data: dict as AnyObject?);
                     } 
                     
                     
