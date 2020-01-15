@@ -110,10 +110,23 @@ android {
             include "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
         }
     }
+
+    signingConfigs {
+        release {
+            storeFile file("./release.keystore")
+            storePassword "124578"
+            keyAlias "example"
+            keyPassword "124578"
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled enableProguardInReleaseBuilds
-            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+//            minifyEnabled enableProguardInReleaseBuilds
+            minifyEnabled false
+            debuggable true
+            signingConfig signingConfigs.release
+//            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
 
