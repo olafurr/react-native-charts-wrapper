@@ -18,9 +18,13 @@ import java.net.URL;
 
 public class DrawableUtils {
     public static Drawable drawableFromUrl(Context context, String url, final int width, final int height) {
+
+        int nWidth = (int)(width * 0.7);
+        int nHeight = (int)(height * 0.7);
+
         if (BuildConfig.BUILD_TYPE == "debug") {
             try {
-                return new DrawableLoadingAsyncTask().execute(url, Integer.toString(width), Integer.toString(height)).get();
+                return new DrawableLoadingAsyncTask().execute(url, Integer.toString(nWidth), Integer.toString(nHeight)).get();
             } catch (Exception e) {
                 // draw dummy drawable when execution fail
                 e.printStackTrace();
@@ -30,7 +34,7 @@ public class DrawableUtils {
             int resourceId = context.getResources().getIdentifier(url, "drawable", context.getPackageName());
 
             Bitmap image = BitmapFactory.decodeResource(context.getResources(), resourceId);
-            return new BitmapDrawable(Resources.getSystem(), Bitmap.createScaledBitmap(image, width, height, true));
+            return new BitmapDrawable(Resources.getSystem(), Bitmap.createScaledBitmap(image, nWidth, nHeight, true));
         }
 
 
