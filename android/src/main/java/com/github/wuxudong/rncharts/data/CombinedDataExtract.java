@@ -52,6 +52,13 @@ public class CombinedDataExtract extends DataExtract<CombinedData, Entry> {
         return chartData;
     }
 
+
+    public void setContext(Context mContext) {
+        context = mContext;
+        scatterDataExtract.setContext(mContext);
+        lineDataExtract.setContext(mContext);
+    }
+
     @Override
     CombinedData createData() {
         throw new UnsupportedOperationException();

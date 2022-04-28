@@ -89,6 +89,10 @@ public class LineDataExtract extends DataExtract<LineData, Entry> {
         }
     }
 
+    public void setContext(Context mContext) {
+        context = mContext;
+    }
+
     @Override
     Entry createEntry(ReadableArray values, int index) {
         float x = index;

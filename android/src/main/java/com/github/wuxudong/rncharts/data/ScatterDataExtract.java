@@ -58,6 +58,10 @@ public class ScatterDataExtract extends DataExtract<ScatterData, Entry> {
         }
     }
 
+    public void setContext(Context mContext) {
+        context = mContext;
+    }
+
     @Override
     Entry createEntry(ReadableArray values, int index) {
         float x = index;

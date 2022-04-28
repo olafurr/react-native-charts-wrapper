@@ -62,7 +62,8 @@ public class CombinedChartManager extends BarLineChartBaseManager<CombinedChart,
     @Override
     DataExtract getDataExtract() {
         CombinedDataExtract dataExtract = new CombinedDataExtract();
-        dataExtract.context = context;
+        dataExtract.setContext(context);
+
         return dataExtract;
     }
 }
