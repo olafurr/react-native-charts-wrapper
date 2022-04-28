@@ -1,5 +1,7 @@
 package com.github.wuxudong.rncharts.data;
 
+import android.content.Context;
+
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableType;
@@ -20,6 +22,8 @@ public class CombinedDataExtract extends DataExtract<CombinedData, Entry> {
     private ScatterDataExtract scatterDataExtract = new ScatterDataExtract();
     private CandleDataExtract candleDataExtract = new CandleDataExtract();
     private BubbleDataExtract bubbleDataExtract = new BubbleDataExtract();
+
+    public Context context;
 
     @Override
     public CombinedData extract(Chart chart, ReadableMap propMap) {
