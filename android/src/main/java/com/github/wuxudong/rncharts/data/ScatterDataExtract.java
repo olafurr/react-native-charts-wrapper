@@ -69,7 +69,7 @@ public class ScatterDataExtract extends DataExtract<ScatterData, Entry> {
                 x = (float) map.getDouble("x");
             }
 
-            if (map.hasKey("icon")) {
+            if (map.hasKey("icon") && context != null) {
                 ReadableMap icon = map.getMap("icon");
                 ReadableMap bundle = icon.getMap("bundle");
                 int width = icon.getInt("width");
